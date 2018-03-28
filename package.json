@@ -42,7 +42,7 @@
     "prettier": true,
     "overrides": [
       {
-        "files": "lib/**/*.js",
+        "files": "**/lib/**/*.js",
         "envs": [
           "browser"
         ],
