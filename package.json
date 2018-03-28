@@ -1,0 +1,63 @@
+{
+  "name": "@realmq/web-sdk",
+  "version": "0.0.0",
+  "description": "The RealMQ web sdk for building realtime browser apps. This sdk provides developer friendly access to REST & Realtime APIs of realmq.com.",
+  "license": "MIT",
+  "author": "RealMQ GmbH <service@realmq.com> (https://realmq.com)",
+  "contributors": [
+    "Alrik Zachert <alrik@realmq.com>"
+  ],
+  "repository": "https://github.com/realmq/realmq-web-sdk",
+  "keywords": [
+    "realtime",
+    "realmq",
+    "api",
+    "sdk",
+    "mqtt",
+    "broker"
+  ],
+  "scripts": {
+    "build": "gulp build",
+    "precommit": "lint-staged",
+    "lint": "xo",
+    "lint-fix": "xo --fix",
+    "test": "echo 'No tests, yet' && exit 1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-umd": "^0.2.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "xo": "^0.20.3"
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn lint-fix",
+      "git add"
+    ]
+  },
+  "xo": {
+    "space": true,
+    "prettier": true,
+    "overrides": [
+      {
+        "files": "lib/**/*.js",
+        "envs": [
+          "browser"
+        ],
+        "parserOptions": {
+          "ecmaVersion": 5,
+          "sourceType": "script",
+          "ecmaFeatures": {
+            "globalReturn": false
+          }
+        },
+        "esnext": false,
+        "rules": {
+          "no-implicit-globals": "off"
+        }
+      }
+    ]
+  }
+}
