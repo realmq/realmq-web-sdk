@@ -59,5 +59,8 @@
         }
       }
     ]
+  },
+  "dependencies": {
+    "paho-mqtt": "^1.0.4"
   }
 }

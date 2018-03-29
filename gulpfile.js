@@ -5,7 +5,7 @@ const {version} = require('./package');
 
 gulp.task('build', () => {
   return gulp
-    .src('lib/**/*.js')
+    .src(['node_modules/paho-mqtt/paho-mqtt.js', 'lib/**/*.js'])
     .pipe(concat(`realmq-${version}.js`))
     .pipe(
       umd({
