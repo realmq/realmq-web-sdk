@@ -11,7 +11,6 @@ gulp.task('build', () => {
     .pipe(concat(`realmq-${version}.js`))
     .pipe(
       umd({
-        templateName: 'amdWeb',
         exports: () => 'RealMQ',
         namespace: () => 'RealMQ',
       })
