@@ -43,6 +43,7 @@
   "xo": {
     "space": true,
     "prettier": true,
+    "ignores": ["**/vendor/**"],
     "overrides": [
       {
         "files": "**/lib/**/*.js",
