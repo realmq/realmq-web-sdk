@@ -1,47 +1,42 @@
 const Transform = require('stream').Transform;
+const browserify = require('browserify');
 const gulp = require('gulp');
-const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
-const umd = require('gulp-umd');
+const buffer = require('vinyl-buffer');
+const source = require('vinyl-source-stream');
 
 const {version} = require('./package');
 
-// Monkey patch paho build - remove umd wrapper that causes trouble
-// in browserify/nodeJS contexts.
-function patchPahoMqtt() {
+// See https://github.com/eclipse/paho.mqtt.javascript/issues/150
+function patchPahoMqttRef() {
   const transformStream = new Transform({objectMode: true});
 
   transformStream._transform = function(file, encoding, callback) {
-    const error = null;
-    if (file.path.indexOf('paho-mqtt.js') !== -1) {
-      file.contents = Buffer.from(
-        file.contents
-          .toString()
-          .replace(
-            /\(function ExportLibrary[\S\s]*function LibraryFactory\(\){/gm,
-            ''
-          )
-          .replace(/return PahoMQTT;\n}\);/gm, '')
-      );
-    }
-    callback(error, file);
+    file.contents = Buffer.from(
+      file.contents
+        .toString()
+        .replace(/(Paho\.MQTT)\.(Client|Message)/gm, 'PahoMQTT.$2')
+    );
+
+    callback(null, file);
   };
 
   return transformStream;
 }
 
 gulp.task('build', () => {
-  return gulp
-    .src(['node_modules/paho-mqtt/paho-mqtt.js', 'lib/**/*.js'])
-    .pipe(patchPahoMqtt())
-    .pipe(concat(`realmq-${version}.js`))
-    .pipe(
-      umd({
-        exports: () => 'RealMQ',
-        namespace: () => 'RealMQ',
-      })
-    )
+  const b = browserify({
+    entries: './lib/realmq.js',
+    standalone: 'RealMQ',
+    debug: true,
+  });
+
+  return b
+    .bundle()
+    .pipe(source(`realmq-${version}.js`))
+    .pipe(buffer())
+    .pipe(patchPahoMqttRef())
     .pipe(gulp.dest('dist'))
     .pipe(rename(`realmq-${version}.min.js`))
     .pipe(uglify())
