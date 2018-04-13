@@ -23,6 +23,9 @@
     "lint-fix": "xo --fix",
     "test": "echo 'No tests, yet' && exit 1"
   },
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "browserify": "^16.2.0",
     "gulp": "^3.9.1",
