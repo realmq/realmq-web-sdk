@@ -43,7 +43,9 @@
   "xo": {
     "space": true,
     "prettier": true,
-    "ignores": ["**/vendor/**"],
+    "ignores": [
+      "**/vendor/**"
+    ],
     "overrides": [
       {
         "files": "**/lib/**/*.js",
@@ -65,6 +67,7 @@
     ]
   },
   "dependencies": {
-    "paho-mqtt": "^1.0.4"
+    "paho-mqtt": "^1.0.4",
+    "promise": "^8.0.1"
   }
 }
