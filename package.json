@@ -1,6 +1,6 @@
 {
   "name": "@realmq/web-sdk",
-  "version": "0.1.0-alpha1",
+  "version": "0.1.0-alpha2",
   "description": "The RealMQ web sdk for building realtime browser apps. This sdk provides developer friendly access to REST & Realtime APIs of realmq.com.",
   "license": "MIT",
   "author": "RealMQ GmbH <service@realmq.com> (https://realmq.com)",
