@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - "8"
+  - "6"
+cache: yarn
+git:
+  depth: 1
+script:
+  - yarn lint
+  - yarn build
+jobs:
+  include:
+  - stage: deploy
+    if: tag IS present
+    node_js: "8"
+    script: echo "Publish to NPM"
+    deploy:
+      skip_cleanup: true
+      provider: npm
+      email: npm@realmq.com
+      api_key: $NPM_API_KEY
+      on:
+        tags: true
