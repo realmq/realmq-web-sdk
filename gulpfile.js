@@ -6,8 +6,6 @@ const uglify = require('gulp-uglify');
 const buffer = require('vinyl-buffer');
 const source = require('vinyl-source-stream');
 
-const {version} = require('./package');
-
 // See https://github.com/eclipse/paho.mqtt.javascript/issues/150
 function patchPahoMqttRef() {
   const transformStream = new Transform({objectMode: true});
@@ -34,11 +32,11 @@ gulp.task('build', () => {
 
   return b
     .bundle()
-    .pipe(source(`realmq-${version}.js`))
+    .pipe(source(`realmq.js`))
     .pipe(buffer())
     .pipe(patchPahoMqttRef())
     .pipe(gulp.dest('dist'))
-    .pipe(rename(`realmq-${version}.min.js`))
+    .pipe(rename(`realmq.min.js`))
     .pipe(uglify())
     .pipe(gulp.dest('dist'));
 });

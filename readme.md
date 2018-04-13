@@ -22,3 +22,10 @@ $ npm i -S @realmq/web-sdk
 const realmq = new RealMQ('access_token');
 const subscriptions = await realmq.subscriptions.list();
 ```
+
+---
+
+### LICENSE
+
+The files in this archive are released under MIT license.
+You can find a copy of this license in [LICENSE](LICENSE).
