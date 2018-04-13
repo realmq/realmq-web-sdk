@@ -1,6 +1,6 @@
 {
   "name": "@realmq/web-sdk",
-  "version": "0.0.0",
+  "version": "0.1.0-alpha1",
   "description": "The RealMQ web sdk for building realtime browser apps. This sdk provides developer friendly access to REST & Realtime APIs of realmq.com.",
   "license": "MIT",
   "author": "RealMQ GmbH <service@realmq.com> (https://realmq.com)",
@@ -69,5 +69,8 @@
   "dependencies": {
     "paho-mqtt": "^1.0.4",
     "promise": "^8.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
