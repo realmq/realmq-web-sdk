@@ -62,11 +62,16 @@ realmq.rtm.on('message', (message) => {
 });
 ```
 
-
 ## Documentation
 
 Please check out our full documentation on [realmq.com/docs/web-sdk](https://realmq.com/docs/web-sdk).
 
+### Credits
+
+This SDK utilies and bundles the following awesome libs
+
+* [paho.mqtt.javascript](https://github.com/eclipse/paho.mqtt.javascript) ([License](http://www.eclipse.org/org/documents/edl-v10.php))
+* [promise](https://github.com/then/promise) ([License](https://github.com/then/promise/blob/master/LICENSE))
 
 ---
 
