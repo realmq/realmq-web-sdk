@@ -13,9 +13,10 @@ jobs:
   - stage: deploy
     if: tag IS present
     node_js: "8"
-    script: echo "Publish to NPM"
+    script:
+      - echo "Publish to NPM"
+      - yarn build
     deploy:
-      skip_cleanup: true
       provider: npm
       email: npm@realmq.com
       api_key: $NPM_API_KEY
