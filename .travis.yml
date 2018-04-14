@@ -17,6 +17,7 @@ jobs:
       - echo "Publish to NPM"
       - yarn build
     deploy:
+      skip_cleanup: true
       provider: npm
       email: npm@realmq.com
       api_key: $NPM_API_KEY
