@@ -70,6 +70,7 @@ Please check out our full documentation on [realmq.com/docs/web-sdk](https://rea
 
 This SDK utilies and bundles the following awesome libs
 
+* [base64-js](https://github.com/beatgammit/base64-js) ([License](https://github.com/beatgammit/base64-js/blob/master/LICENSE))
 * [paho.mqtt.javascript](https://github.com/eclipse/paho.mqtt.javascript) ([License](http://www.eclipse.org/org/documents/edl-v10.php))
 * [promise](https://github.com/then/promise) ([License](https://github.com/then/promise/blob/master/LICENSE))
 
