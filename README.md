@@ -4,6 +4,7 @@
 [![Build Status](https://img.shields.io/travis/RealMQ/realmq-web-sdk/master.svg?style=flat-square)](https://travis-ci.org/RealMQ/realmq-web-sdk)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![MIT license](https://img.shields.io/github/license/realmq/realmq-web-sdk.svg?style=flat-square)](LICENSE)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Frealmq%2Frealmq-web-sdk.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Frealmq%2Frealmq-web-sdk?ref=badge_shield)
 
 This web SDK provides developer friendly access the RealMQ REST & Real-time APIs.
 
@@ -80,3 +81,6 @@ This SDK utilies and bundles the following awesome libs
 
 The files in this archive are released under MIT license.
 You can find a copy of this license in [LICENSE](LICENSE).
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Frealmq%2Frealmq-web-sdk.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Frealmq%2Frealmq-web-sdk?ref=badge_large)
