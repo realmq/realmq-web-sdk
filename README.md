@@ -1,7 +1,7 @@
 # RealMQ Web SDK
 
 [![NPM Package](https://img.shields.io/npm/v/@realmq/web-sdk.svg?style=flat-square)](https://www.npmjs.com/package/@realmq/web-sdk)
-[![Build Status](https://img.shields.io/travis/RealMQ/realmq-web-sdk/master.svg?style=flat-square)](https://travis-ci.org/RealMQ/realmq-web-sdk)
+[![Build Status](https://img.shields.io/travis/realmq/realmq-web-sdk/master.svg?style=flat-square)](https://travis-ci.org/realmq/realmq-web-sdk)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![MIT license](https://img.shields.io/github/license/realmq/realmq-web-sdk.svg?style=flat-square)](LICENSE)
 
